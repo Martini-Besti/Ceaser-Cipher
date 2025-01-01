@@ -7,7 +7,7 @@ function caesarEncrypt(plaintext, shift) {
             const shiftBase = char === char.toUpperCase() ? 65 : 97; // ASCII base for upper/lower case
             encryptedText += String.fromCharCode(((char.charCodeAt(0) - shiftBase + shift) % 26 + 26) % 26 + shiftBase);
         } else {
-            encryptedText += char;  // Non-alphabetical characters are added as-is
+            encryptedText += char;  // Non-alphabetical characters are added as they are
         }
     }
     
@@ -16,7 +16,7 @@ function caesarEncrypt(plaintext, shift) {
 
 // Function to decrypt a text using Caesar cipher
 function caesarDecrypt(ciphertext, shift) {
-    return caesarEncrypt(ciphertext, -shift);  // Decrypt by reversing the shift
+    return caesarEncrypt(ciphertext, -shift);  // Decrypt - reversing the shift
 }
 
 // Function to handle the button click and process the encryption or decryption
